@@ -4,7 +4,7 @@
 
 This repository has the code to train, save and test a simple ML model on the Iris Dataset. 
 The Iris dataset is a small dataset which contains attributes of the flower - Sepal length, Sepal width, Petal length and Petal width.
-The goal of the task is to classifiy based on these dimensions, the type of the Iris, which in the dataset is among three classes - Setosa, Versicolour and Virginica.
+The goal of the task is to classify based on these dimensions, the type of the Iris, which in the dataset is among three classes - Setosa, Versicolour and Virginica.
 
 I also detail the steps required to deploy the model on the Google Cloud AI Platform.
 And finally, the repository contains the code to run a Streamlit app with the model deployed on the AI Platform.
@@ -13,11 +13,11 @@ And finally, the repository contains the code to run a Streamlit app with the mo
 * A Google Cloud account and a Google Cloud Project (using GCP will cause money if you don't have any of the free $300 credits you get when you first sign up)
 * Python 3.6+
 * A simple 
-`pip install -r requirements.txt` from the [iris_classification](iris_classification) directory will install the other Python packages reuqired.
+`pip install -r requirements.txt` from the [iris_classification](iris_classification) directory will install the other Python packages required.
 
 
 ## Steps to follow
-In this PoC, I will be training and deploying a fairly simple ML model. If you follow this tutorial, deploying models should be fairly simple as well.
+In this PoC, I will be training and deploying a simple ML model. If you follow this tutorial, deploying models should be fairly easy as well.
 
 ### 1. Training and Deploying the model locally
 
@@ -45,7 +45,6 @@ python train.py
 
 3. Verify the model trained correctly using pytest
 ```
-cd iris_classification
 pytest
 ```
 
@@ -58,8 +57,8 @@ streamlit run app.py
 Right now, the `Predict GCP` button will give an error on clicking. It requires a json configuration file which we will obtain when we deploy our model. To get the `Predict AWS` button working for your model, refer to a separate [tutorial](https://github.com/shreyansh26/Iris_classification-AWS-Lambda-PoC) I made on that.
 
 
-### 2. Deploying the model on GCP
-1. The saved `model.pkl` has to be stored in a Google Storage Bucket. First, create a bucket.
+### 2. Storing the model in a GCP Bucket
+The saved `model.pkl` has to be stored in a Google Storage Bucket. First, create a bucket.
 
 ![](images/gcp-bucket.PNG)
 
@@ -69,7 +68,8 @@ And then upload the `model.pkl` to the bucket.
 
 ![](images/bucket-upload.PNG)
 
-2. Then using the AI Platform, we need to create a model
+### 3. Hosting the model on AI Platform
+Using the AI Platform, we need to create a model
 
 ![](images/aiplatform-models.PNG)
 
@@ -89,7 +89,9 @@ The model will take some time to be hosted.
 
 ![](images/version4.PNG)
 
-3. Finally, head to `IAM -> Service Accounts` and add a Service Account which basically allows to use the model hosted on AI Platform externally.
+### 4. Creating a Service Account
+
+Finally, head to `IAM -> Service Accounts` and add a Service Account which basically allows to use the model hosted on AI Platform externally.
 
 ![](images/service.PNG)
 
