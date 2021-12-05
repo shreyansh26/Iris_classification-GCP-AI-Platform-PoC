@@ -127,7 +127,7 @@ allows you to get the predictions from the GCP hosted model as well.
 ![](images/fin-streamlit.PNG)
 
 
-AND WE ARE DONE!
+### AND WE ARE DONE!
 
 Hope this gives you a good idea on how to deploy ML models on GCP. Obviously, there can be extensions which can be done. 
 
