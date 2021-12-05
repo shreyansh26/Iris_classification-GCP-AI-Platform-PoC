@@ -1,0 +1,9 @@
+google_api_python_client==2.32.0
+numpy==1.19.5
+pandas==1.2.5
+protobuf==3.19.1
+pytest==6.2.5
+requests==2.25.1
+scikit_learn==1.0.1
+scipy==1.7.3
+streamlit==0.76.0
