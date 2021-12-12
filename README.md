@@ -17,7 +17,7 @@ And finally, the repository contains the code to run a Streamlit app with the mo
 
 
 ## Steps to follow
-In this PoC, I will be training and deploying a simple ML model. If you follow this tutorial, deploying models should be fairly easy as well.
+In this PoC, I will be training and deploying a simple ML model. If you follow this tutorial, deploying complex models should be fairly easy as well.
 
 ### 1. Training and Deploying the model locally
 
